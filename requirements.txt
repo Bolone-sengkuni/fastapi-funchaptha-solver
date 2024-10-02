@@ -1,0 +1,7 @@
+fastapi
+onnxruntime
+requests
+loguru
+tqdm
+Pillow
+mangum
