@@ -4,4 +4,4 @@ requests
 loguru
 tqdm
 Pillow
-mangum
+uvicorn

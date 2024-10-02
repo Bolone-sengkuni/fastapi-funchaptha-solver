@@ -3,8 +3,9 @@ import funcaptcha_challenger
 import base64
 from PIL import Image
 import io
+import uvicorn
 from pydantic import BaseModel
-from mangum import Mangum
+
 
 
 app = FastAPI()
@@ -53,5 +54,5 @@ async def create_task(data: Data):
 
 
 
-
-handler = Mangum(app)
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=True, workers=4)
