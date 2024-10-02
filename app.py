@@ -31,11 +31,7 @@ class Data(BaseModel):
 async def root():
     return {
         "api": {
-            "call": "/createTask",
-            "post": {
-                "image": "image_file base64 encoding",
-                "type_image": "type funchaptha"
-            }
+            "call": "/createTask"
         }
     }
 
@@ -51,8 +47,12 @@ async def create_task(data: Data):
     if prediction_results is None:
         return {"error": True, "result": "An error occurred while processing the image"}
     
+    return {'error': False, 'result': prediction_results}
+
+
 
 
 
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8001, reload=True, workers=4)
+    
